@@ -17,7 +17,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Luckiest+Guy' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin: 'anonymous' }
     ]
   },
 
@@ -37,6 +38,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/global.js'
   ],
 
   /*

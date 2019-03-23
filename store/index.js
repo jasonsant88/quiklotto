@@ -4,7 +4,8 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       tickets: [],
-      userBalance: 100
+      userBalance: 100,
+      audio: true
     },
     mutations: {
       addTicket(state, ticket) {
@@ -18,6 +19,10 @@ const createStore = () => {
 
       reset(state) {
         state.tickets = []
+      },
+
+      toggleAudio(state) {
+        state.audio = !state.audio
       }
     },
     actions: {
@@ -31,6 +36,10 @@ const createStore = () => {
 
       reset(context) {
         context.commit('reset')
+      },
+
+      toggleAudio(context) {
+        context.commit('toggleAudio')
       }
     },
     getters: {
@@ -39,6 +48,9 @@ const createStore = () => {
       },
       userBalance(state) {
         return state.userBalance
+      },
+      audio(state) {
+        return state.audio
       }
     }
   })

@@ -58,13 +58,6 @@ export default {
   },
 
   methods: {
-    playSound(sound) {
-      if (sound) {
-        const audio = new Audio(sound)
-        audio.play()
-      }
-    },
-
     drawNumber() {
       this.inPlay = true
       console.time('draw')

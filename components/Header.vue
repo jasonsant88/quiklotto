@@ -10,6 +10,7 @@
           <b-collapse is-nav id="nav_collapse">
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
+              <a href="#" @click="toggleAudio()"><i class="fas" :class="$store.getters.audio ? 'fa-volume-up' : 'fa-volume-mute'"></i></a>
               <nuxt-link to="/">Play</nuxt-link>
               <nuxt-link to="/betslip">Betslip</nuxt-link>
               <nuxt-link to="/draw">Draw</nuxt-link>
@@ -24,6 +25,11 @@
 
 <script>
 export default {
+  methods: {
+    toggleAudio() {
+      this.$store.commit('toggleAudio')
+    }
+  }
 }
 </script>
 
