@@ -1,0 +1,156 @@
+//Variables
+
+// Media query variables. Usage: @media @sm-and-up { ... } or @media @tablet, @desktop { ... }
+// Media query names like Bootstrap
+@xs-and-up: ~"only screen"; // xs is the smallest size, so "xs and up" is basically "everything on a screen"
+@xs-only: ~"only screen and (max-width: 768px)";
+@sm-and-up: ~"only screen and (min-width: 768px)";
+@sm-only: ~"only screen and (min-width: 768px) and (max-width: 992px)";
+@md-and-up: ~"only screen and (min-width: 992px)";
+@md-only: ~"only screen and (min-width: 992px) and (max-width: 1200px)";
+@lg-and-up: ~"only screen and (min-width:1200px)";
+@lg-only: @lg-and-up;
+// Media query names like how we talk in the project (although "true" responsive webdesign shouldn't use these terms)
+@print: ~"print";
+@mobile: @xs-only; // Don't use this if you're using other sizes too, because Mobile First should be the default.
+@tablet: @sm-only;
+@desktop: @md-and-up;
+
+//Colors
+@backgroundprimary: #922392;
+@backgroundsecondary: #342159;
+@ballcolor: #FFAE29;
+
+@fancyfont: 'Luckiest Guy';
+@bodyfont: 'Open Sans';
+
+@shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+body {
+  background-color: #F2F2F2;
+}
+
+.container {
+  @media @mobile {
+    padding: 0;
+  }
+}
+
+.game-container {
+  padding: 50px;
+  margin-top: -300px;
+  background-color: #fefefe;
+  min-height: 500px;
+  border-radius: 5px;
+
+  @media @mobile {
+    padding: 30px;
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-family: @fancyfont;
+
+    @media @mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+
+    @media @mobile {
+      font-size: 1rem;
+    }
+  }
+
+  h5 {
+    font-size: 1.2rem;
+
+    @media @mobile {
+      font-size: 1rem;
+    }
+  }
+
+}
+
+.number {
+	border: 1px solid darken(#EFEFEF, 10%);
+	border-radius: 100px;
+	margin: 0 auto;
+	padding: 10px;
+	min-width: 50px;
+	min-height: 40px;
+	font-weight: bold;
+	text-align: center;
+	cursor:pointer;
+	background-color: #EFEFEF;
+	color: #57467A;
+
+	&:hover, &.chosen {
+		color: #ffffff;
+		background-color: @ballcolor;
+		border: 1px solid darken(@ballcolor, 10%);
+	}
+
+	@media @mobile {
+		font-size: 0.8rem;
+		padding: 8px;
+		min-width: 40px;
+		min-height: 30px;
+	}
+}
+
+.betslip-ticket {
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 20px;
+	margin: 40px auto;
+	width: 80%;
+	padding: 20px;
+	box-shadow: @shadow;
+	background: #EFEFEF;
+	border-radius: 2px;
+
+	@media @mobile {
+		width:100%;
+		grid-gap: 0px;
+	}
+
+	.number {
+		border-radius: 100px;
+		margin: 0 auto;
+		padding: 10px;
+		min-width: 50px;
+		min-height: 40px;
+		font-weight: bold;
+		text-align: center;
+		color: #ffffff;
+		background-color: @ballcolor;
+		border: 1px solid darken(@ballcolor, 10%);
+	
+		@media @mobile {
+			font-size: 0.8rem;
+			padding: 8px;
+			min-width: 40px;
+			min-height: 30px;
+		}
+	}
+}
+
+button.btn {
+	background: #ffffff;
+	background: linear-gradient(90deg, #FEC81D  0%, #FF863D 100%);
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 1rem;
+	border: 1px solid #FF863D;
+	padding: 20px 30px;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: orangered;
+		color: #ffffff;
+	}
+}
